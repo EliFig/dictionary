@@ -6,5 +6,8 @@ background: radial-gradient(circle, rgba(73, 97, 203, 1) 39%, rgba(118, 75, 162,
 }
 .App .footer{
     color: white;
-    margin: 10px 0;
+    margin: 20px 0;
+}
+.App footer{
+    margin: 20px;
 }
