@@ -3,24 +3,26 @@ import Result from "./Result.js"
 import axios from "axios";
 
 export default function Dictionary(props){
-    let[keyWord, setkeyWord] = useState("props.defaultKeyword");
-    let [loaded, setLoaded] = useState(false);
-    let[definition, setDefinition] = useState(null)
+    const [keyWord, setkeyWord] = useState("props.defaultKeyword");
+    const [loaded, setLoaded] = useState(false);
+    const [definition, setDefinition] = useState(null)
 
     function handleResponse(response){
         setDefinition(response.data[0]);
     }
 
-      function load() {
+          function load() {
     setLoaded(true);
     Search();
   }
 
 
-  function Search() {
+      function Search() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyWord}`;
     axios.get(apiUrl).then(handleResponse);
+
   }
+
 
 
   function handleSubmit(event) {
