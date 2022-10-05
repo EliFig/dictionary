@@ -1,4 +1,9 @@
+body{
+background: radial-gradient(circle, rgba(73, 97, 203, 1) 39%, rgba(118, 75, 162, 1) 100%);
+}
 .App{
     text-align: center;
-    margin-top: 30px;;
+}
+.App .footer{
+    color: white;
 }

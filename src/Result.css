@@ -1,0 +1,10 @@
+.Result{
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 10px rgba(188, 110, 221, 0.1);
+    margin: 20px 0;
+}
+.Result h1{
+    color: #52079f;
+}

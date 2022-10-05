@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Result from "./Result.js"
+import "./Dictionary.css";
 import axios from "axios";
 
 export default function Dictionary(props){
@@ -36,13 +37,12 @@ setkeyWord(event.target.value);
         if(loaded){
     return(
         <div className="Dictionary">
-            <section>
-    <form onSubmit={handleSubmit}>
-            <input onChange={HandleKeyWord} type="Search" placeholder="Type a word"/>
-            <button onChange={HandleKeyWord} type="button" className="btn btn-primary">Primary</button>
+    <form  className="d-flex" onSubmit={handleSubmit}>
+            <input  className="form-control me-2" onChange={HandleKeyWord} type="Search" placeholder="Search a word"/>
+            <button type="submit" className="btn btn-primary">Search</button>
     
         </form>
-        </section>
+
         <Result definition={definition}/>
         </div>
     );
@@ -50,5 +50,5 @@ setkeyWord(event.target.value);
             load();
             return "Loading!"
         }
-    
+
 }

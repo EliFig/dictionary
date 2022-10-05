@@ -1,0 +1,17 @@
+
+.Dictionary form {
+    margin: 40px 0px;
+    background-color: white;
+    padding: 25px 15px;
+    border-radius: 12px;
+
+}
+.Dictionary input{
+    width: 100%;
+    border-radius: 6px;
+    padding: 8px 6px;
+        border: 1px solid #38598b;
+}
+.Dictionary .botton{
+    background-color: #38598b;
+}
