@@ -7,4 +7,7 @@
 }
 .Result h1{
     color: #52079f;
+    font-size: 40px;
+    font-weight: bold;
+        text-transform: capitalize;
 }

@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
      <div className='container'>
-      <Dictionary />
+      <Dictionary defaultKeyword={"happy"}/>
       <footer>
           This project was coded by Eliana Figueroa,
           and is{" "}

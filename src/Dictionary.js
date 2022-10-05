@@ -2,14 +2,25 @@ import React, { useState } from "react";
 import Result from "./Result.js"
 import "./Dictionary.css";
 import axios from "axios";
+import Photos from "./Photos";
 
 export default function Dictionary(props){
-    const [keyWord, setkeyWord] = useState("props.defaultKeyword");
+    const [keyWord, setkeyWord] = useState(props.defaultKeyword);
     const [loaded, setLoaded] = useState(false);
     const [definition, setDefinition] = useState(null)
+    const [photos, setPhotos] = useState([]);
+
+    function handleImages(response) {
+    setPhotos(response.data.photos);
+  }
 
     function handleResponse(response){
         setDefinition(response.data[0]);
+        let apiUrl = `https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=3`;
+    let apiKey = "563492ad6f9170000100000105ed6ac961414b48baef5536af292320";
+    axios
+      .get(apiUrl, { headers: { Authorization: `Bearer ${apiKey}` } })
+      .then(handleImages);
     }
 
           function load() {
@@ -42,7 +53,7 @@ setkeyWord(event.target.value);
             <button type="submit" className="btn btn-primary">Search</button>
     
         </form>
-
+        <Photos photos={photos} />
         <Result definition={definition}/>
         </div>
     );
